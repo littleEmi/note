@@ -1,1 +1,150 @@
-sass
+sass使用：
+1、官网下载安装ruby：(注：mac下自带Ruby   来源：https://www.sass.hk/install/（sass中文网）)
+	1、勾选 Add Ruby executables to your PATH
+	2、打开命令行（ruby目录下）：ruby -v   版本显示-安装成功
+	3、更换gem源（国内网络问题导致gem源间歇性中断），使用淘宝的gem源
+		1、删除原gem源
+		gem sources --remove http://rubygems.org/
+		2、添加过呢淘宝源
+		gem sources -a http://ruby.taobao.org/
+		3、打印是否替换成功
+		gem sources -l
+		4、更换成功后打印结果
+		*** CURRENT SOURCES ***
+		http://ruby.taobao.org/
+2、sass变量：
+	1、变量声明引用
+		sass使用$符号来标识变量。比变量名中的’-‘，’ _‘是互通的。
+		$nav-color:#f90;
+		.nav{
+			width:100px；
+			color:$nav_color;
+		}
+	2、嵌套css规则
+		1、css中重复写选择器，sass只要一遍。
+		#content{
+			article{
+				h1{color:#333}
+				p{margin-top:1.4em}
+			}
+		}
+		2、把新的选择器嵌套在当前的选择其中
+		#ceontent{
+			margin-top:1.4em;
+			aside{
+				bakground:#252525;
+				color:#fff;
+			}
+		}
+	3、父选择器的标识符：&
+	#content{
+		color:#666;
+		&:hover{color:#fff;}
+	}
+	4、群组选择器的嵌套
+	.content{
+		h1,h2,h3,h4{
+			margin-top:10px;
+		}
+	}
+	.aside{
+		a{color:#333;}
+	}
+	5、子组合选择器和同层组合选择器：>、+、~
+		header>p:子代选择器，父元素header紧跟着的p子元素
+		header+p：header元素后紧跟的p元素
+		header~p：选择跟在header元素后的同层p元素，不管中间隔了多少元素
+		article{
+			~ article{border-top:1px dashed #ccc;}
+			> section{background:#f42424;}
+			dl > {
+				dt{color:#333}
+				dd{color:#555}
+			}
+			nav + & {margin-top:0}
+		}
+		//css中
+		article ~ article { border-top: 1px dashed #ccc }
+		article > section{ background: #eee }
+		article dl > dt { color: #333 }
+		article dl > dd { color: #555 }
+		nav + article { margin-top: 0 }
+	6、嵌套属性
+		border
+		.nav{
+			border{
+				style:solid,
+				width:1px,
+				color:#333
+			}
+		}
+		//css
+		.nav{
+			border-styel:solid;
+			border-width:1px;
+			border-color:#333;
+		}
+	7、sass文件的导入
+		style.scss
+		1、css中：@import "style";
+		2、使用sass部分文件：专门为@import命令而编写的sass文件，并不需要生产独立的css文件。这样的文件称为局部文件，sass局部文件以下划线开头。
+			@import "/themes/_night-sky.scss";样式表里:@inport "themes/night-sky";
+	8、默认变量值	
+		反复申明一个变量，会被后面的覆盖。
+		$link-color:blue;
+		$link-color:red;
+		a{
+			color:$link-color://red
+		}
+	9嵌套导入、
+		_blue-theme.scss
+			aside{
+				background:#252525;
+				color:#fff;
+			}
+		//css
+		.blue-theme{@impor "blue-theme"}
+	10、原生css导入
+		sass兼容原声css，导入css文件到sass文件中，修改css文件的后缀名为scss后缀，直接导入
+	11、静默注释
+		sass提供标准注释为：/*…… */，即静默注释，其内容不会出现在css中，会被抹去。
+	12、混合器
+		混合器实现大段样式的重用。
+		定义：@mixin 名
+			@mixin no-bullets {
+  				list-style: none;
+					li {
+ 						 list-style-image: none;
+   						 list-style-type: none;
+   						 margin-left: 0px;
+  					}
+				}
+		调用：@include 名字
+			ul.plain {
+  				color: #444;
+  				@include no-bullets;
+			}
+		//css
+			ul.plain {
+  				color: #444;
+  				list-style: none;
+			}
+			ul.plain li {
+ 				 list-style-image: none;
+ 				 list-style-type: none;
+  				margin-left: 0px;
+			}
+	13、给混合器传参
+		@mixin link-colors($normal, $hover, $visited) {
+ 			 color: $normal;
+  			&:hover { color: $hover; }
+ 			 &:visited { color: $visited; }
+		}
+		a {
+  			@include link-colors(blue, red, green);
+		}
+		a { color: blue; }
+		a:hover { color: red; }
+		a:visited { color: green; }
+	14、继承器
+		
