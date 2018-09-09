@@ -1,0 +1,5 @@
+正则表达式:https://www.cnblogs.com/Vayne-N/p/8094634.html
+js学习:http://www.css88.com/doc/lodash/
+图表:http://echarts.baidu.com/
+php学习:http://php.net/manual/zh/function.file.php
+js:https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript

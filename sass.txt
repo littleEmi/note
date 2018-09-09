@@ -147,4 +147,4 @@ sass使用：
 		a:hover { color: red; }
 		a:visited { color: green; }
 	14、继承器
-	test	 34
+	

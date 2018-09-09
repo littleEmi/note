@@ -1,0 +1,42 @@
+git push
+git init
+git add .
+git commit -m "注释"
+git remote add origin https://.....
+git push -u origin master
+
+download
+ git clone   远程仓储地址
+git pull 远程项目地址 master   
+
+下载and上传
+1、选择自己准备好的文件夹，右键 -->Git Bash  ，打开git终端
+ 
+2、配置自己的用户名和邮箱
+ 
+    git config --global user.name "你的名字或昵称"
+ 
+    git config --global user.email "你的邮箱"
+ 
+3.初始化git仓库
+   git init
+ 
+4.设置远程的项目地址：
+ 
+   git remote add origin 你的项目地址，注意：项目地址形式为:https://gitee.com/xxx/yyy.git
+ 
+
+开始第一次上传你的项目（后期正常提交，就重复下面的步骤）
+ 
+   git add .      --将项目中的所有文件添加到本地仓储
+ 
+   git commit -m   '对上传文件的注释
+ 
+   git push origin master    --正式上传至码云中，若上传有问题，可以试试   git push origin master -f 表示舍弃线上的文件，强制推送
+
+
+  前面的clone在下载时会创建相应的项目文件夹，而使用pull则可以下载到指定文件夹，并且可以将本文件夹作为开发文件夹，当有更新后，可直接push到远程。
+
+    前提条件：采用pull命令时，请先初始化本地文件夹（本地仓储显示为：master），即采用 上面提交的方法进行配置，包括初始化init ，设置远程地址等。完成后执行以下命令
+
+    git pull 远程项目地址 master   
