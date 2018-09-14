@@ -1,0 +1,31 @@
+ //html
+ <div class="list-poster">
+    <img id='downloadPoster' src="https://hz168.buffge.com/static/images/poster/RQcode.png" alt="">
+    <div class="message flex">
+      <div class='title'>
+        <div>信贷员：xxx</div>
+        <div>手机号：xxxxxxx</div>
+      </div>
+        <div class='RQcode-title'>
+          <img id='QRcode' class='RQcode' src="https://hz168.buffge.com/static/images/poster/RQcode.png" alt="">
+          <div class='title'>扫一扫，立即申请</div>
+      </div>
+    </div>
+  </div>
+ 
+ 
+ 
+ html2canvas($(".list-poster"), {
+    onrendered: function (canvas) {
+      //把截取到的图片替换到a标签的路径下载
+      $("#download").attr('href', canvas.toDataURL());
+      //下载下来的图片名字
+      $("#download").click(function () {
+        $("#download").attr('download', date.getTime() + '.png');
+        var image = new Image();
+        image.src = canvas.toDataURL("image/png");
+        $('.list-poster').children().remove();
+        $('.list-poster').append(image);
+      })
+    }
+  }
