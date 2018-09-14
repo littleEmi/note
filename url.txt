@@ -3,3 +3,8 @@ js学习:http://www.css88.com/doc/lodash/
 图表:http://echarts.baidu.com/
 php学习:http://php.net/manual/zh/function.file.php
 js:https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript
+静态网址：http://staticfile.org/
+bootstrap4 样式展示：https://tabler.github.io/tabler/form-elements.html
+bootstrap 表格：http://bootstrap-table.wenzhixin.net.cn/zh-cn/documentation/
+typeJavascript：https://www.tslang.cn/docs/home.html
+微信开发文档：https://developers.weixin.qq.com/miniprogram/dev/api/authorize.html
