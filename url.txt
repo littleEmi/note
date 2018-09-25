@@ -8,3 +8,4 @@ bootstrap4 样式展示：https://tabler.github.io/tabler/form-elements.html
 bootstrap 表格：http://bootstrap-table.wenzhixin.net.cn/zh-cn/documentation/
 typeJavascript：https://www.tslang.cn/docs/home.html
 微信开发文档：https://developers.weixin.qq.com/miniprogram/dev/api/authorize.html
+压缩图片：https://tinypng.com
