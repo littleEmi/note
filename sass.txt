@@ -147,4 +147,5 @@ sass使用：
 		a:hover { color: red; }
 		a:visited { color: green; }
 	14、继承器
-	
+	C:\Ruby25-x64\lib\ruby\gems\2.5.0\gems\sass-3.6.0\lib\sass\engine.rb
+	Encoding.default_external = Encoding.find('utf-8')
