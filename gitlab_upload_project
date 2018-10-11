@@ -1,0 +1,6 @@
+在git Bash 中输入ssh-keygen -t rsa -C 'xxx@xxx.com'，一直回车
+然后打开~/.ssh/id_rsa.pub文件(~表示用户目录，比如我的windows就是C:\Users\Administrator)，复制其中的内容
+
+打开gitlab,找到Profile Settings-->SSH Keys--->Add SSH Key
+  ,并把上一步中复制的内容粘贴到Key所对应的文本框，
+  在Title对应的文本框中给这个sshkey设置一个名字，点击Add key按钮
