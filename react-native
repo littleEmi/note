@@ -1,0 +1,13 @@
+1. 安装rn脚手架 
+    yarn global add react-native-cli 
+2. 安装python2.7
+3. 安装 android studio
+   安装汉化包
+4. 安装初始sdk
+5. 设置 ANDROID_HOME
+6. 安装 Android SDK Platform 27 和 Intel x86 Atom_64 System Image
+7. 将D:\android\sdk\platform-tools 添加到path
+
+util:
+        打开菜单,有些手机无法打开菜单键,输入这个就可以打开menu,然后选择热更新
+        adb shell input keyevent 82
