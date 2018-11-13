@@ -17,3 +17,5 @@ es6 http://es6.ruanyifeng.com/
 nodejs  http://nodejs.cn/api/
 
 js教程  https://wangdoc.com/javascript/
+
+react-native调试工具 https://github.com/jhen0409/react-native-debugger/releases/download/v0.8.1/rn-debugger-windows-ia32.zip
