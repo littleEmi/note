@@ -11,3 +11,16 @@
 util:
         打开菜单,有些手机无法打开菜单键,输入这个就可以打开menu,然后选择热更新
         adb shell input keyevent 82
+
+
+打开地图：Linking.openURL("geo:37.2122 , 12.222") 传入一个坐标
+
+打电话：Linking.openURL("tel:10086") 传入一个电话号码
+
+打开网站:Linking.openURL("http://www.baidu.com") 传入一个网址，http:// 不能少
+
+发送短信:Linking.openURL("smsto:10086")
+
+发送邮件：Linking.openURL("mailto:10000@qq. com")
+
+打开其他APP：Linking.openURL('flutter://li.zhuoyuan') //其他app定义的scheme以及host。
