@@ -24,3 +24,11 @@ util:
 发送邮件：Linking.openURL("mailto:10000@qq. com")
 
 打开其他APP：Linking.openURL('flutter://li.zhuoyuan') //其他app定义的scheme以及host。
+
+打开qq:
+ let url = "mqqwpa://im/chat?chat_type=wpa&uin=QQ号";//调用QQ
+   Linking.canOpenURL(url).then(supported => {
+       if (supported) {
+           Linking.openURL(url);
+       }
+   });
