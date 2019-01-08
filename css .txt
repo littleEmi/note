@@ -16,6 +16,7 @@ text-overflow，可以用来多行文本的情况下，用省略号“...”隐�
                 text-overflow: ellipsis;
                 display: -webkit-box;
                -webkit-line-clamp: 2;
+	        -webkit-box-orient:block-axis;
                -webkit-box-orient: vertical;
 
 
