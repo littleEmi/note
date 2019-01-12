@@ -32,3 +32,7 @@ util:
            Linking.openURL(url);
        }
    });
+   
+   
+   没有菜单的reload: adb shell input keyevent 82
+		            react-native run-android
