@@ -1,5 +1,13 @@
+ 第一次上传基本命令
+    git push
+    git init
+    git add .
+    git commit -m "注释"
+    git remote add origin https://.....
+    git push -u origin master
+    
 git 基本命令
-  git clone https://github.com*****.
+  git clone https://github.com*****. 下载到本地
   git pull 拉取当前最新代码
   修改内容后
   git add .  上传当前目录
@@ -14,7 +22,7 @@ git 基本命令
    git branch 分支名
    git checkout 分支名  切换到分支
    git push --set-upstream origin 版本名
-
+   
 download
  git clone   远程仓储地址
  git pull 远程项目地址 master   
