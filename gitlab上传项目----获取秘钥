@@ -4,3 +4,9 @@
 打开gitlab,找到Profile Settings-->SSH Keys--->Add SSH Key
   ,并把上一步中复制的内容粘贴到Key所对应的文本框，
   在Title对应的文本框中给这个sshkey设置一个名字，点击Add key按钮
+
+
+powershell--获取公钥
+  ssh-keygen -t rsa -b 4096 -C "你的github邮箱名" -f ./文件名
+  在你相应的目录有两个文件,'文件名'(身份证明)与'文件名.pub'(公钥)
+ 
