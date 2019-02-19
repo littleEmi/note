@@ -1,10 +1,14 @@
- 第一次上传基本命令
-    git push
-    git init
-    git add .
-    git commit -m "注释"
-    git remote add origin https://.....
-    git push -u origin master
+git 官网
+   …or create a new repository on the command line
+   echo "# dh.buffge.com" >> README.md
+   git init
+   git add README.md
+   git commit -m "first commit"
+   git remote add origin https://github.com/ilinme/dh.buffge.com.git
+   git push -u origin master
+   …or push an existing repository from the command line
+   git remote add origin https://github.com/ilinme/dh.buffge.com.git
+   git push -u origin master
     
 git 基本命令
   git clone https://github.com*****. 下载到本地
