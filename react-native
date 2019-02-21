@@ -10,7 +10,10 @@
 
 util:
         打开菜单,有些手机无法打开菜单键,输入这个就可以打开menu,然后选择热更新
-        adb shell input keyevent 82
+        没有菜单的reload: adb shell input keyevent 82
+		        react-native run-android
+			yarn upgrade jsbdk
+			yarn upgrade 升级组件
 
 
 打开地图：Linking.openURL("geo:37.2122 , 12.222") 传入一个坐标
