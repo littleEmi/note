@@ -1,3 +1,5 @@
+sass 生成css
+	sass --watch E:\ilinme\letter_circle\little_circle/sass:E:\ilinme\letter_circle\little_circle/css/
 sass使用：
 1、官网下载安装ruby：(注：mac下自带Ruby   来源：https://www.sass.hk/install/（sass中文网）)
 	1、勾选 Add Ruby executables to your PATH
