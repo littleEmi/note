@@ -1,0 +1,64 @@
+html 规范
+    1.尽量符合w3c规范 比如不要把div放到ul下一级,不要把script 写在后面
+    2.尽量不内联样式
+css 规范
+    1.全局唯一的dom 设置唯一样式 使用 id 假如还有公用样式再添加一个class
+      如
+
+      全局唯一的头像 设置140px * 140px ,这个140px 就写在avatar中
+      然后这个div也是inline-block,全局有很多dom要设置要inline-block,
+     不用再#avatar中写,直接添加一个ink 类就行
+    2. 类名 - ， id名 使用驼峰 如
+
+       不能写成script-list.
+    3. 类名 id名 必须要有意义,使用英文,不能使用拼音 如
+
+       表示积分,不能使用id = 'fen'
+       一些通用的可以使用拼音或者首字母拼音: 如taobao tb wx ali
+       btn 表示button, bg表示background
+    4. 小程序宽度能写死宽高度的尽量写死,不要用百分比
+    5. 小程序长度单位使用rpx,不使用px
+    6. 小程序使用flex布局 能用flex布局解决的不使用相对 绝对定位
+    7. title,content,name,item,等类名不允许单独写,必须是某个对象才能有title类
+      如: 
+        list表示是个数组
+       
+
+            这里的item类是指script-list下面的某个对象
+           
+
+                  这里的name 是某个item的name
+
+
+ js 规范
+    1.命名采用首字母小写驼峰. 如 let scriptList;
+    2.命名要有意义.
+    3.jQuery的dom变量 在前面加上$, 如 let $scriptList =$("#scriptList");
+    4.类中或包中私有方法在前面不能加上下划线(_)
+        如 包名.js文件:
+            最后module.exports 里面只导出公用方法
+    5.布尔类型变量以is开头 如: let isLogin =true; let canLogin =true;
+    6.包中方法使用驼峰,不管是不是类的方法 例如 addViewCount
+    7.普通js文件中定义方法 使用下划线
+    8.绑定事件的回调函数 必须定义
+    如 $("#addViewCount").click(add_view_count);
+      function add_view_count(){
+      }
+    9.每个页面除了requirejs库和require配置文件.只允许引入一个js文件
+    10. ajax方法使用bdk中的ajaxPromise方法
+      如: ajaxPromise({
+          data:{
+              id:3,
+            },
+            url:location.href,
+        }).then(json=>{
+        ...
+        }).catch(err=>{
+        ...
+        });
+    11. 数组,对象,最后一个属性都要加一个逗号
+    如: let arr= [1,2,3,];
+        let obj= {a:1,b:2,};
+    12. 对象中键名能不加引号就不要加
+    如: let obj= {a:1,b:2,};
+    错误示范: let obj= {"a":1,"b":2,};
