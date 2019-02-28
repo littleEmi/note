@@ -27,6 +27,9 @@ git 基本命令
    git checkout 分支名  切换到分支
    git push --set-upstream origin 版本名
    
+  取消代理
+  git config --global --unset http.proxy
+   
 download
  git clone   远程仓储地址
  git pull 远程项目地址 master   
