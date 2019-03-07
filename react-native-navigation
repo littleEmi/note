@@ -1,0 +1,50 @@
+1.关于this.props.navigation.navigate()与this.props.navigation.push()的区别
+
+navigate方法在跳转时会在已有的路由堆栈中查找是否已经存在该值，若存在将直接跳转到之前存在的地址。并且只有当路由堆栈中不存在这个新路由时才会添加。此情况下使用this.props.navigation.popToTop()方法无法生效。
+
+push方法则总是向路由堆栈中添加，无论之前是否存在。此时使用this.props.navigation.popToTop()方法可以达到回到栈顶路由的位置。
+2.路由传参
+
+this.props.navigation.push('路由名称',{ '参数名': '值',[ 其他参数]})
+3.获取参数
+
+this.props.navigation.getParam('参数名',[默认值])
+ 
+4.使用setParams更新已经挂在的活动窗口的导航选项
+ 
+this.props.navigation.setParams({otherParam: 'Updated!'})
+ 
+5.可以从任何组件访问到navigation，获取路由相关信息
+import { withNavigation } from 'react-navigation';
+// 然后将需要访问路由的组件用该方法包裹，如
+withNavigation(‘组件名’)
+6.替换路由
+
+this.props.navigation.replace();
+7.定义动态路由
+
+复制代码
+const SimpleApp = createStackNavigator({
+  Home: { screen: HomeScreen },
+  Chat: {
+    screen: ChatScreen,
+    path: 'chat/:user', //传参数的规则
+  },
+});
+复制代码
+8.URI前缀
+
+const SimpleApp = createStackNavigator({...});
+
+const prefix = Platform.OS == 'android' ? 'mychat://mychat/' : 'mychat://';
+
+const MainApp = () => <SimpleApp uriPrefix={prefix} />;
+9.核心方法
+
+createStackNavigator: 一次渲染一个屏幕并提供屏幕之间的转换。打开新屏幕时，它将放置在堆栈顶部
+
+createBottomTabNavigator: 呈现一个标签栏，允许用户在多个屏幕之间切换
+
+createSwitchNavigator: 在一个屏幕和另一个屏幕之间切换，顶部没有UI，当它们变为非活动状态时卸载屏幕
+
+createDrawerNavigator: 提供从屏幕左侧滑入的抽屉
