@@ -18,6 +18,9 @@ git 基本命令
   git commit -m "提交当前代码注释"
   git push  提交
   
+  下载某项目中某分支的命令
+    git clone https://github.com/xxxxxx -b 分支名 下载到的文件名
+  
   设置git用户名密码(避免多次输入)
   git config --global user.name "用户名"
   git config --global user.email 邮箱
