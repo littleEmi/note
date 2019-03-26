@@ -39,3 +39,9 @@ util:
    
    没有菜单的reload: adb shell input keyevent 82
 		            react-native run-android
+
+设置头部样式
+	 headerStyle: {
+		backgroundColor: "#f53f68",
+		elevation: 0,
+	 },
