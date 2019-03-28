@@ -9,3 +9,17 @@
       console.log('首页被刷新');
       this.init()
     });
+    
+2. 跳转页面传递参数
+  onPress={() => {
+        this.props.navigation.navigate('需要跳转的Screen', {
+           title: '需要传递的参数'
+        });
+  }}
+  
+class list extends Component{
+static navigationOptions =  ({ navigation }) =>({
+        title: navigation.state.params.title,
+    });
+render() {...} 
+}
