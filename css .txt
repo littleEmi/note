@@ -35,3 +35,18 @@ animation: rotate .4s linear forwards;
     -webkit-transform: scaleY(.5);
     transform:scaleY(.5);
  }
+ 
+
+画三角形
+       width: 0,
+        height: 0,
+        backgroundColor: 'transparent',
+        borderStyle: 'solid',
+        borderLeftWidth: 30,
+        borderRightWidth: 30,
+        borderBottomWidth: 8,
+        borderTopWidth: 8,
+        borderLeftColor: 'chartreuse',
+        borderRightColor: 'transparent',
+        borderTopColor: 'transparent',
+        borderBottomColor: 'transparent',
