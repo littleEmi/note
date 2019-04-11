@@ -10,7 +10,7 @@ git 官网
    git remote add origin https://github.com/ilinme/dh.buffge.com.git
    git push -u origin master
     
-git 基本命令
+ 1. git 基本命令
   git clone https://github.com*****. 下载到本地
   git pull 拉取当前最新代码
   修改内容后
@@ -18,22 +18,27 @@ git 基本命令
   git commit -m "提交当前代码注释"
   git push  提交
   
-  下载某项目中某分支的命令
-    git clone https://github.com/xxxxxx -b 分支名 下载到的文件名
+ 2. 下载某项目中某分支的命令
+    1. git 删除上传文件但不删除本地文件
+	 git rm .\nbproject\ -r --cached
+    2. git clone https://github.com/ilinme/www.byhealth.net -b rn-boyi rn-boyi  
+		下载这个网址下的分支rn-boyi,复制到rn-boyi
   
-  设置git用户名密码(避免多次输入)
+  
+ 3.设置git用户名密码(避免多次输入)
   git config --global user.name "用户名"
   git config --global user.email 邮箱
 
-  分支
+
+ 4. 分支
    git branch 分支名
    git checkout 分支名  切换到分支
    git push --set-upstream origin 版本名
    
-  取消代理
+ 5. 取消代理
   git config --global --unset http.proxy
    
-download
+ 6. download
  git clone   远程仓储地址
  git pull 远程项目地址 master   
 
