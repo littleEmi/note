@@ -1,0 +1,2 @@
+1. 获取从URL传过来的值
+  let { id } = qs.parse(this.props.location.search, { ignoreQueryPrefix: true });
