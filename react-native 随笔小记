@@ -23,7 +23,30 @@
       });
   render() {...} 
   }
-3. navigationOptions使用class下面的方法
+3. navigation 头部使用this.state 中的变量
+   1. interface NavParams {
+      isLogin: boolean
+    }
+    interface Props {
+      navigation: NavigationScreenProp<State, NavParams>
+    }
+    2. async componentDidMount() {
+      await this.init()
+      this.props.navigation.setParams({
+        isLogin: this.state.isLogin,
+      })
+    }
+    3. headerLeft: (
+      <TouchableOpacity
+        onPress={() => {
+          navigation.state.params!.isLogin
+            ? navigation.navigate(pathMap.PersonalCenter)
+            : navigation.navigate(pathMap.Register)
+        }}>
+        <Icon style={{ paddingLeft: 15, fontSize: 16, color: "#333" }} name="left" />
+      </TouchableOpacity>
+    ),
+4. navigationOptions使用class下面的方法
      headerRight: (
       <TouchableOpacity onPress={() => navigation.state.params.navigatePress()}>
         <Text
