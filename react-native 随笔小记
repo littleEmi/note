@@ -65,3 +65,18 @@
           isDelete: !this.state.isDelete
         });
       };
+ 5.两个页面相互传递数据
+    1.a向b传递 this.props.navigation.push(pathMap.QuickReply, {
+      msg: this.state.quickReplyMsg,
+    })
+    2.使用DeviceEventEmitter.emit 把数据传递回去 headerLeft: (
+        <TouchableOpacity
+          onPress={() => {
+            let params = navigation.state.params as Params
+            let quickReplyMsg = params.msg
+            DeviceEventEmitter.emit(pathMap.AdvisoryChat + "Reload", quickReplyMsg)
+            navigation.goBack()
+          }}>
+          <Icon style={[style.headerLeft, global.fontSize16]} name="left" />
+        </TouchableOpacity>
+      ),
