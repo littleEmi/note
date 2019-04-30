@@ -52,24 +52,32 @@
         mode: "delete" | "done"
       }
       2. navigation: NavigationScreenProp<State, NavParams>
-     3.headerRight: (
-        <TouchableOpacity onPress={() => navigation.state.params.navigatePress()}>
-          <Text
-            style={[style.headerTitleLeft, global.fontSize14, global.fontStyle]}
-          >
-            {navigation.state.isDelete ? "删除" : "完成"}
+     3. headerRight: (
+        <TouchableOpacity
+          onPress={() => {
+            let oriMode = navigation.getParam("mode")
+            navigation.setParams({
+              mode: oriMode === "done" ? "delete" : "done",
+            })
+            navigation.state.params!.navigatePress()
+          }}>
+          <Text style={style.headerRight}>
+            {navigation.state.params && navigation.state.params!.mode === "done" ? "编辑" : "完成"}
           </Text>
         </TouchableOpacity>
       )
     4. async componentDidMount() {
         await this.init();
-        this.props.navigation.setParams({ navigatePress: this.deleteGroup });
+         this.props.navigation.setParams({
+          mode: "done",
+          navigatePress: this.editMsg,
+        })
       }
-     deleteGroup = () => {
+     editMsg = () => {
         this.setState({
-          isDelete: !this.state.isDelete
-        });
-      };
+          isDeleteMode: !this.state.isDeleteMode,
+        })
+      }
  5.两个页面相互传递数据
     1.a向b传递 this.props.navigation.push(pathMap.QuickReply, {
       msg: this.state.quickReplyMsg,
