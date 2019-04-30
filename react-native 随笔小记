@@ -47,19 +47,24 @@
       </TouchableOpacity>
     ),
 4. navigationOptions使用class下面的方法
-     headerRight: (
-      <TouchableOpacity onPress={() => navigation.state.params.navigatePress()}>
-        <Text
-          style={[style.headerTitleLeft, global.fontSize14, global.fontStyle]}
-        >
-          {navigation.state.isDelete ? "删除" : "完成"}
-        </Text>
-      </TouchableOpacity>
-    )
-    async componentDidMount() {
-      await this.init();
-      this.props.navigation.setParams({ navigatePress: this.deleteGroup });
-    }
+      1.interface NavParams {
+        navigatePress: () => void
+        mode: "delete" | "done"
+      }
+      2. navigation: NavigationScreenProp<State, NavParams>
+     3.headerRight: (
+        <TouchableOpacity onPress={() => navigation.state.params.navigatePress()}>
+          <Text
+            style={[style.headerTitleLeft, global.fontSize14, global.fontStyle]}
+          >
+            {navigation.state.isDelete ? "删除" : "完成"}
+          </Text>
+        </TouchableOpacity>
+      )
+    4. async componentDidMount() {
+        await this.init();
+        this.props.navigation.setParams({ navigatePress: this.deleteGroup });
+      }
      deleteGroup = () => {
         this.setState({
           isDelete: !this.state.isDelete
