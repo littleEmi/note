@@ -80,3 +80,17 @@
           <Icon style={[style.headerLeft, global.fontSize16]} name="left" />
         </TouchableOpacity>
       ),
+     3.接受
+      componentDidMount() {
+        this.listener = DeviceEventEmitter.addListener(pathMap.SquareRoot + "Reload", quickReplyMsg => {
+          this.setState({
+            quickReplyMsg,
+          })
+        })
+      }
+      componentWillUnmount() {
+        //移除监听
+        if (this.listener) {
+          this.listener.remove()
+        }
+      }
