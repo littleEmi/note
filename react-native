@@ -54,3 +54,43 @@ util:
 	 },
 5.  async 函数的返回值是一个promise;函数内可以使用await 
 	await: 顺序执行,相当.then()
+6. 写typescript文件
+	/**
+	 * 1.命名为tsx文件
+	 * 2.构建react 基本模块
+	 * 3. 看这个页面需要多个参数(props) 然后写Props的接口
+	 * 4. 看这个页面有多少动态内容(state) 然后写State的接口
+	 * 5. 在render中渲染 state
+	 * 6. 写事件
+	 */
+8. tsx文件函数位置
+	interface Props{}
+	interface State{}
+	class 文件名{
+		constructor{
+			super()
+			this.state=this.getInitState()
+		}
+		init=()=>{}
+		getInitState()=>{}
+		componentDieMount(){
+			this.init()
+		}
+	}
+9. 文件格式
+	import React, { Component } from "react";
+	interface Props {}
+	interface State {}
+
+	export default class Main extends Component<Props, State> {
+	  constructor(props: any) {
+	    super(props);
+	    this.state = this.getInitState();
+	  }
+	  getInitState = (): State => {
+	    return {};
+	  };
+	  render() {
+	    return <div> </div>;
+	  }
+	}
