@@ -52,3 +52,5 @@ util:
 		backgroundColor: "#f53f68",
 		elevation: 0,//头部底部线条
 	 },
+5.  async 函数的返回值是一个promise;函数内可以使用await 
+	await: 顺序执行,相当.then()
