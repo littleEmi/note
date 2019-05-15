@@ -10,6 +10,9 @@ git 官网
    git remote add origin https://github.com/ilinme/dh.buffge.com.git
    git push -u origin master
     
+  查看:   yarn global add git-file-history 查看git历史记录
+	  git-file-history C:\Users\Administrator\g... 某文件的路劲
+    
  1. git 基本命令
   git clone https://github.com*****. 下载到本地
   git pull 拉取当前最新代码
