@@ -34,29 +34,32 @@ git 官网
    git branch 分支名
    git checkout 分支名  切换到分支
    git push --set-upstream origin 版本名
+
+5. git 删除上传文件但不删除本地文件
+	 git rm .\nbproject\ -r --cached
    
- 5. 取消代理
+ 6. 取消代理
   git config --global --unset http.proxy
    
- 6. download
- git clone   远程仓储地址
- git pull 远程项目地址 master   
+ 7. download
+   git clone   远程仓储地址
+   git pull 远程项目地址 master   
 
 下载and上传
-1、选择自己准备好的文件夹，右键 -->Git Bash  ，打开git终端
- 
-2、配置自己的用户名和邮箱
- 
-    git config --global user.name "你的名字或昵称"
- 
-    git config --global user.email "你的邮箱"
- 
-3.初始化git仓库
-   git init
- 
-4.设置远程的项目地址：
- 
-   git remote add origin 你的项目地址，注意：项目地址形式为:https://gitee.com/xxx/yyy.git
+	1、选择自己准备好的文件夹，右键 -->Git Bash  ，打开git终端
+
+	2、配置自己的用户名和邮箱
+
+	    git config --global user.name "你的名字或昵称"
+
+	    git config --global user.email "你的邮箱"
+
+	3.初始化git仓库
+	   git init
+
+	4.设置远程的项目地址：
+
+	   git remote add origin 你的项目地址，注意：项目地址形式为:https://gitee.com/xxx/yyy.git
  
 
 开始第一次上传你的项目（后期正常提交，就重复下面的步骤）
