@@ -1,10 +1,11 @@
 1. 在登录成功后,在不刷新的情况下改变某个页面的数据
   import { DeviceEventEmitter, } from "react-native";
   登录成功之后,刷新某个页面  (pathMap.Home:为某页面路由名字)
+ subscription?: EmitterSubscription
   DeviceEventEmitter.emit(pathMap.Home + 'Reload', null);
   
   //在导航中添加查询数据的方法，设置一个钩子
-    this.props.navigation.setParams({ init: _ => this.init() });
+
     this.subscription = DeviceEventEmitter.addListener(pathMap.Home + 'Reload', _ => {
       console.log('首页被刷新');
       this.init()
