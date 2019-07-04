@@ -1,0 +1,10 @@
+ 1. 定义函数
+  changeBgAudioSrc = (cb: Function) => {
+    return this.debounce(cb, 1000, this.bgAudioUrlLimter)
+  }
+  2. 事件引用
+    onMouseEnter={this.changeBgAudioSrc(() => {
+           this.setState({
+              bannerAudio: audio.url,
+            })
+     })}
