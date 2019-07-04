@@ -1,10 +1,53 @@
- 1. 定义函数
-  changeBgAudioSrc = (cb: Function) => {
-    return this.debounce(cb, 1000, this.bgAudioUrlLimter)
+ 1. 防抖
+    1. 定义函数
+     debounce = (cb: Function, delay = 500, limter: { timer: number | null } = { timer: null }) => {
+       return (...args: any) => {
+         if (limter.timer) {
+           clearTimeout(limter.timer)
+         }
+         limter.timer = window.setTimeout(() => cb(...args), delay)
+       }
+     }
+     2. 事件引用
+
+       1. onMouseEnter={this.changeBgAudioSrc(() => {
+              this.setState({
+                 bannerAudio: audio.url,
+               })
+          })}
+        2.  changeBgAudioSrc = (cb: Function) => {
+              return this.debounce(cb, 1000, this.bgAudioUrlLimter)
+            }
+2. 节流 
+    function debounceOrThrottle ({ fn, wait = 300, immediate = false, executeOncePerWait = false }) {
+    let tId = null
+    let context = null
+    let args = null
+    let lastTriggerTime = null
+    let result = null
+    let lastExecutedTime = null
+
+    const later = function() {
+      const last = Date.now() - lastTriggerTime
+
+      if(last < wait && last > 0) {
+        setTimeout(later, wait - last)
+      } else {
+        result = fn.apply(context, args)
+        context = args = null
+        tId = null
+      }
+    }
+
+    return function() {
+      context = this
+      args = arguments
+      lastTriggerTime = Date.now()
+
+      if(!tId) {
+        tId = setTimeout(later, wait)
+      }
+
+      return result
+    }
   }
-  2. 事件引用
-    onMouseEnter={this.changeBgAudioSrc(() => {
-           this.setState({
-              bannerAudio: audio.url,
-            })
-     })}
