@@ -1,4 +1,28 @@
- 1. 防抖
+/**
+* 防抖 以500ms内最后一次调用为准 执行回调
+*/
+export function debounce(cb: Function, delay = 500) {
+ let timer = 0
+ return function() {
+  clearTimeout(timer)
+  timer = setTimeout(cb, delay)
+ }
+}
+/**
+* 限流 每隔500ms 才能执行一次,如果没到500ms 就取消回调
+*/
+export function throttle(cb: Function, duration = 500) {
+ let lastTime = new Date().getTime()
+ return () => {
+  let now = new Date().getTime()
+  if (now - lastTime > duration) {
+   cb()
+   lastTime = now
+  }
+ }
+}
+
+1. 防抖
     1. 定义函数
      debounce = (cb: Function, delay = 500, limter: { timer: number | null } = { timer: null }) => {
        return (...args: any) => {
