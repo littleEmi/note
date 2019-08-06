@@ -1,3 +1,23 @@
+react
+ 1.定义
+ debounce = (
+    cb: Function,
+    delay = 500,
+    limter: { timer: number | null } = { timer: null },
+  ) => {
+    return (...args: any) => {
+      if (limter.timer) {
+        clearTimeout(limter.timer)
+      }
+      limter.timer = window.setTimeout(() => cb(...args), delay)
+    }
+  }
+  2. 使用
+  changeBgAudioSrc = (cb: Function) => {
+    return this.debounce(cb, 1000, this.bgAudioUrlLimter)
+  }
+
+
 /**
 * 防抖 以500ms内最后一次调用为准 执行回调
 */
