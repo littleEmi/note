@@ -1,0 +1,48 @@
+export function req<T>(param: ReqBaseParam & { method: Method }) {
+  let { url, data, method } = param
+  return new Promise<JsonRes<T>>((s, j) => {
+    let sessionSecret = getStorageSync("sessionSecret")
+    if (sessionSecret) {
+      data = data || {}
+      data.sessionSecret = sessionSecret
+    }
+    Taro.request({
+      url: config.BASE_URL + "/" + url,
+      data,
+      method,
+      header: {
+        "content-type": "application/json",
+      },
+      success(res) {
+        if (typeof res.data === "string") {
+          try {
+            res.data = JSON.parse(res.data)
+          } catch (e) {
+            j({ msg: "返回值不会正确的值,err: " + e })
+          }
+        }
+        let json = res.data
+        if (json.code !== constant.SUCCESS) {
+          j(json)
+        } else {
+          s(json)
+        }
+      },
+      fail(err) {
+        j({ msg: "网络请求失败,错误信息: " + err })
+      },
+    })
+  })
+}
+export function bget<T>(param: ReqBaseParam) {
+  return req<T>({ ...param, method: "GET" })
+}
+export function bpost<T>(param: ReqBaseParam) {
+  return req<T>({ ...param, method: "POST" })
+}
+/**
+ * 获取图片的完整url
+ */
+export function getPicFullUrl(url: string): string {
+  return url.indexOf("http") === 0 ? url : config.BASE_URL + url
+}
