@@ -94,3 +94,25 @@ util:
 	    return <div> </div>;
 	  }
 	}
+10. Animated使用
+    1. spinValue = new Animated.Value(0)
+    2.  componentDidMount() {
+	    this.spin()
+	}
+    3.  spin = () => {
+	    this.spinValue.setValue(0)
+	    Animated.timing(this.spinValue, {
+	      toValue: 1,
+	      duration: 1000,
+	      easing: Easing.linear,
+	    }).start(() => this.spin())
+	  }
+     4.  const spin = this.spinValue.interpolate({
+	      inputRange: [0, 1],
+	      outputRange: ["0deg", "360deg"],
+	    })
+     5.  <Animated.Image
+            style={[global.loadingImg, { transform: [{ rotate: spin }] }]}
+            source={gImg.common.loading}
+          />
+	  
