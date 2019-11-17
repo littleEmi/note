@@ -47,6 +47,9 @@ git 官网
  7. download
    git clone   远程仓储地址
    git pull 远程项目地址 master   
+8. 删除分支
+	git reset --hard HEAD~1
+	git push --force
 
 下载and上传
 	1、选择自己准备好的文件夹，右键 -->Git Bash  ，打开git终端
