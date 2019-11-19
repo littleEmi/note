@@ -50,6 +50,8 @@ git 官网
 8. 删除分支
 	git reset --hard HEAD~1
 	git push --force
+9. 合并分支
+	https://blog.csdn.net/zl1zl2zl3/article/details/94019526
 
 下载and上传
 	1、选择自己准备好的文件夹，右键 -->Git Bash  ，打开git终端
