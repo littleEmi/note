@@ -12,11 +12,21 @@ react
       limter.timer = window.setTimeout(() => cb(...args), delay)
     }
   }
-  2. 使用
+   bgAudioUrlLimter: { timer: number | null } = {
+    timer: null,
+  }
+  
   changeBgAudioSrc = (cb: Function) => {
     return this.debounce(cb, 1000, this.bgAudioUrlLimter)
   }
-
+  2. 使用
+  onMouseEnter={this.changeBgAudioSrc(() => {
+     this.followPointerHoverActive()
+        // this.init()
+      this.setState({
+      bannerAudio: audio.small_video_url,
+      })
+})}
 
 /**
 * 防抖 以500ms内最后一次调用为准 执行回调
